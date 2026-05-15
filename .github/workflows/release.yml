@@ -8,7 +8,11 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
-  packages: write   # required to publish to GitHub Packages
+  packages: write
+
+# Use Node.js 24 runtime for all GitHub Actions (avoids Node 20 deprecation)
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   release:
@@ -32,14 +36,11 @@ jobs:
       - name: Build all libraries
         run: npm run build:all
 
-      # semantic-release: bumps version, writes CHANGELOG, creates GitHub Release, git tag
       - name: Release (version + changelog + GitHub Release)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run release
 
-      # Publish each built library to GitHub Packages
-      # When libraries are added, their dist/ folder contains a publishable package.json
       - name: Publish libraries to GitHub Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
