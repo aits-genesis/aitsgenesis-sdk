@@ -1,8 +1,8 @@
 <h1 align="center">AITS Genesis SDK</h1>
 
 <p align="center">
-  <strong>Angular library monorepo for the <a href="https://github.com/aits-genesis">AITS Genesis</a> platform</strong><br/>
-  Shared UI and utility libraries published as <code>@aits-genesis/*</code> on GitHub Packages
+  <strong>Angular 21 library monorepo · Client-side SDK for the <a href="https://github.com/aits-genesis">Xalorith</a> ERP platform</strong><br/>
+  10 composable packages published as <code>@aits-genesis/*</code> on GitHub Packages
 </p>
 
 <p align="center">
@@ -21,11 +21,20 @@
   </a>
 </p>
 
+> **AI-Agent Note:** This SDK is the Angular client foundation for the **Xalorith** `.NET 9` ERP backend.
+> Before coding anything, read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for API contracts and coding standards,
+> and [`docs/DEVELOPMENT_PLAN.md`](docs/DEVELOPMENT_PLAN.md) for the full library build plan.
+
 ---
 
 ## Overview
 
-`aitsgenesis-sdk` is a **monorepo Angular workspace** hosting all shared Angular libraries for the AITS Genesis platform. Libraries are built and versioned independently, published under the `@aits-genesis/*` npm scope on [GitHub Packages](https://github.com/aits-genesis/aitsgenesis-sdk/pkgs/npm).
+`aitsgenesis-sdk` is a **monorepo Angular workspace** hosting 10 shared Angular libraries for the
+[Xalorith ERP](https://github.com/aits-genesis/xalorith-web) platform. All libraries are built and released
+together under the `@aits-genesis/*` npm scope on [GitHub Packages](https://github.com/aits-genesis/aitsgenesis-sdk/pkgs/npm).
+
+Each library is generated with `ng generate library`, lives in `projects/libs/<name>/`, and follows a strict
+dependency graph to ensure tree-shakeability and clean separation of concerns.
 
 Each library is generated with `ng generate library` and lives in `projects/libs/<name>/`.
 
@@ -62,6 +71,38 @@ aitsgenesis-sdk/
 ├── SECURITY.md
 └── LICENSE                    # MIT
 ```
+
+---
+
+## Libraries
+
+> **Build order:** `models` → `utils` → `auth` → `http` → `security` → `org` → `forms` → `ui` → `reporting`
+> See [`docs/DEVELOPMENT_PLAN.md`](docs/DEVELOPMENT_PLAN.md) for full contracts, exported APIs, and acceptance criteria.
+
+| Package                                                  | Status       | Purpose                                                               |
+| -------------------------------------------------------- | ------------ | --------------------------------------------------------------------- |
+| [`@aits-genesis/core`](projects/libs/core)               | ✅ Published | Foundation: version tokens, `provideXalorithSdk()`, `XALORITH_CONFIG` |
+| [`@aits-genesis/models`](docs/libraries/models.md)       | 🔲 Planned   | All TypeScript interfaces + enums mirroring Xalorith backend DTOs     |
+| [`@aits-genesis/utils`](docs/libraries/utils.md)         | 🔲 Planned   | Pure utilities: date, amount, phone, GUID, enum helpers               |
+| [`@aits-genesis/auth`](docs/libraries/auth.md)           | 🔲 Planned   | JWT auth, `AuthService` (signals), interceptor, guards                |
+| [`@aits-genesis/http`](docs/libraries/http.md)           | 🔲 Planned   | `BaseApiService`, `FileBankService`, loading state, error bus         |
+| [`@aits-genesis/security`](docs/libraries/security.md)   | 🔲 Planned   | Permission service, `*agIfHasPermission` directive, route guard       |
+| [`@aits-genesis/org`](docs/libraries/org.md)             | 🔲 Planned   | Multi-org context, org selector, business center context              |
+| [`@aits-genesis/forms`](docs/libraries/forms.md)         | 🔲 Planned   | `BaseFormComponent`, `XValidators`, `SliSelectComponent`              |
+| [`@aits-genesis/ui`](docs/libraries/ui.md)               | 🔲 Planned   | `ag-table`, `ag-modal`, `ag-toast`, `ag-file-upload`, 15+ components  |
+| [`@aits-genesis/reporting`](docs/libraries/reporting.md) | 🔲 Planned   | PDF download, Excel export, `ag-pdf-viewer`, `ag-report-button`       |
+
+---
+
+## Backend Integration
+
+This SDK is purpose-built for the **Xalorith** `.NET 9` ERP backend:
+
+- 23 business modules (Auth, CRM, Accounting, Finance, Sales, Inventory, HR, Marketing, ELearn, MSM, …)
+- All API responses wrapped in `XHttpResponse<T>` — handled by `@aits-genesis/http`
+- Module-level permission guard `[HasPermission(Module, Action)]` — mirrored by `@aits-genesis/security`
+- 296+ backend enums served via `/Enum/GenerateEnumToJson` — typed in `@aits-genesis/models`
+- Multi-tenant (OrganizationId-scoped) — managed by `@aits-genesis/org`
 
 ---
 
