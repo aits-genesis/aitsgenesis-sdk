@@ -3,8 +3,43 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "schematicCollections": ["angular-eslint"]
+    "schematicCollections": ["angular-eslint"],
+    "analytics": false
   },
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "@aits-genesis/core": {
+      "projectType": "library",
+      "root": "projects/libs/core",
+      "sourceRoot": "projects/libs/core/src",
+      "prefix": "ag",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/libs/core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/libs/core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/libs/core/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/libs/core/**/*.ts", "projects/libs/core/**/*.html"],
+            "eslintConfig": "projects/libs/core/eslint.config.js"
+          }
+        }
+      }
+    }
+  }
 }

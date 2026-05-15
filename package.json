@@ -9,8 +9,9 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "build:all": "npm run build:libs",
-    "build:libs": "echo 'No libraries yet — add libs here'",
+    "build:all": "npm run build:core",
+    "build:core": "ng build @aits-genesis/core --configuration production",
+    "build:libs": "npm run build:core",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --passWithNoTests",
@@ -43,18 +44,19 @@
     ]
   },
   "dependencies": {
-    "@angular/common": "^21.2.0",
-    "@angular/compiler": "^21.2.0",
-    "@angular/core": "^21.2.0",
     "@angular/forms": "^21.2.0",
-    "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular/build": "^21.2.11",
     "@angular/cli": "^21.2.11",
+    "@angular/common": "^21.2.13",
+    "@angular/compiler": "^21.2.13",
     "@angular/compiler-cli": "^21.2.0",
+    "@angular/core": "^21.2.13",
+    "@angular/platform-browser": "^21.2.13",
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
     "@eslint/js": "^10.0.1",
@@ -72,11 +74,15 @@
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
     "jest-preset-angular": "^16.1.5",
+    "jsdom": "^28.0.0",
     "lint-staged": "^17.0.4",
+    "ng-packagr": "^21.2.0",
     "prettier": "^3.8.3",
     "semantic-release": "^25.0.3",
     "ts-jest": "^29.4.9",
     "typescript": "~5.9.2",
-    "typescript-eslint": "8.59.2"
+    "typescript-eslint": "8.59.2",
+    "vitest": "^4.0.8",
+    "zone.js": "^0.16.2"
   }
 }

@@ -45,10 +45,15 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          for pkg_dir in dist/*/; do
-            if [ -f "$pkg_dir/package.json" ]; then
-              echo "Publishing $pkg_dir ..."
-              npm publish "$pkg_dir" --access public
-            fi
-          done
-          echo "Publish step complete (no dist packages = nothing to publish)"
+          # Find all package.json files 2 levels deep (handles @scope/name layout)
+          # e.g. dist/aits-genesis/core/package.json
+          found=0
+          while IFS= read -r pkg_json; do
+            pkg_dir=$(dirname "$pkg_json")
+            echo "Publishing $pkg_dir ..."
+            npm publish "$pkg_dir" --access public
+            found=1
+          done < <(find dist -mindepth 2 -maxdepth 3 -name "package.json" 2>/dev/null)
+          if [ "$found" -eq 0 ]; then
+            echo "No dist packages found — nothing to publish"
+          fi

@@ -1,0 +1,39 @@
+{
+  "name": "@aits-genesis/core",
+  "version": "0.0.1",
+  "description": "Core utilities, base classes, tokens, and shared interfaces for the AITS Genesis SDK",
+  "keywords": [
+    "angular",
+    "aits-genesis",
+    "sdk",
+    "core",
+    "utilities"
+  ],
+  "author": "AITS Genesis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aits-genesis/aitsgenesis-sdk.git",
+    "directory": "projects/libs/core"
+  },
+  "homepage": "https://github.com/aits-genesis/aitsgenesis-sdk/tree/main/projects/libs/core#readme",
+  "bugs": {
+    "url": "https://github.com/aits-genesis/aitsgenesis-sdk/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/core": "^21.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  }
+}
