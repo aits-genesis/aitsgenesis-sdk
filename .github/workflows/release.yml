@@ -43,7 +43,7 @@ jobs:
           VERSION=$(node -p "require('./package.json').version")
           echo "Building version $VERSION"
           # Propagate version to every library package.json
-          for pkg_json in projects/libs/*/package.json; do
+          for pkg_json in projects/aits-genesis/*/package.json; do
             node -e "
               const fs = require('fs');
               const p = JSON.parse(fs.readFileSync('$pkg_json'));
