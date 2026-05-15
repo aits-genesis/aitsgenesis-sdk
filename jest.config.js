@@ -14,7 +14,7 @@ module.exports = {
     ],
   },
   moduleNameMapper: {
-    '^@aitsgenesis/(.*)$': '<rootDir>/projects/libs/$1/src/public-api',
+    '^@aits-genesis/(.*)$': '<rootDir>/projects/libs/$1/src/public-api',
   },
   collectCoverageFrom: [
     'projects/**/*.ts',

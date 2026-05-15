@@ -22,6 +22,9 @@
     "release": "semantic-release"
   },
   "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "packageManager": "npm@11.9.0",
   "lint-staged": {
     "projects/**/*.ts": [

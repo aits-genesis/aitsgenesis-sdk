@@ -77,11 +77,21 @@ Releases are fully automated via [semantic-release](https://github.com/semantic-
 - Push to `next` -> pre-release (`x.y.z-next.N`)
 - Push to `beta` -> pre-release (`x.y.z-beta.N`)
 
-**Required GitHub Secrets:**
-| Secret | Description |
-|--------|-------------|
-| `NPM_TOKEN` | npm automation token for publishing `@aitsgenesis/*` packages |
-| `GITHUB_TOKEN` | Auto-provided by GitHub Actions |
+**Publishing registry:** GitHub Packages (`https://npm.pkg.github.com`)
+
+Libraries are published as `@aits-genesis/<lib-name>` — the scope matches the GitHub org.
+
+**Required Secrets:** None beyond the auto-provided `GITHUB_TOKEN`.  
+GitHub Actions' built-in token has `packages: write` — no extra setup needed.
+
+**Installing packages** (for consumers):
+
+```bash
+# .npmrc in your project
+@aits-genesis:registry=https://npm.pkg.github.com
+```
+
+You'll need a [GitHub PAT](https://github.com/settings/tokens) with `read:packages` scope as `NODE_AUTH_TOKEN`.
 
 ## Tech Stack
 

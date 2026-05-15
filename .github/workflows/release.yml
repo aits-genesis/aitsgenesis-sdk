@@ -8,15 +8,12 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
-  id-token: write
-  packages: write
+  packages: write   # required to publish to GitHub Packages
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    # Only run after CI passes
-    needs: []
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,16 +24,30 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@aits-genesis'
 
       - run: npm ci
 
       - name: Build all libraries
         run: npm run build:all
 
-      - name: Release
+      # semantic-release: bumps version, writes CHANGELOG, creates GitHub Release, git tag
+      - name: Release (version + changelog + GitHub Release)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run release
+
+      # Publish each built library to GitHub Packages
+      # When libraries are added, their dist/ folder contains a publishable package.json
+      - name: Publish libraries to GitHub Packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for pkg_dir in dist/*/; do
+            if [ -f "$pkg_dir/package.json" ]; then
+              echo "Publishing $pkg_dir ..."
+              npm publish "$pkg_dir" --access public
+            fi
+          done
+          echo "Publish step complete (no dist packages = nothing to publish)"

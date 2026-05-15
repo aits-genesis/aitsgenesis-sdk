@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@aits-genesis'
       - run: npm ci
       - run: npm run lint
       - run: npm run format:check
@@ -33,6 +35,8 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@aits-genesis'
       - run: npm ci
       - run: npm run test:coverage
       - uses: actions/upload-artifact@v4
@@ -50,6 +54,8 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@aits-genesis'
       - run: npm ci
       - run: npm run build:all
       - uses: actions/upload-artifact@v4
