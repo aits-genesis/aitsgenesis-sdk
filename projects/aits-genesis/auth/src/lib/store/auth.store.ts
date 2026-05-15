@@ -17,7 +17,7 @@ export class AuthStore {
   readonly claims = computed(() => this._state().claims);
   readonly accessToken = computed(() => this._state().accessToken);
   readonly activeOrgId = computed(() => this._state().activeOrgId);
-  readonly isMultiOrg = computed(() => this._state().claims?.isMultiOrg ?? false);
+  readonly isMultiOrg = computed(() => this._state().claims?.isMultiOrg === 'true');
   readonly needsOrgSelection = computed(
     () => this.isAuthenticated() && this.isMultiOrg() && !this.activeOrgId(),
   );

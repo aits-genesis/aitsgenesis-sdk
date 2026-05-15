@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { LoginVm, TokenResponse } from '@aits-genesis/models';
 import { AuthStore } from '../store/auth.store';
@@ -14,25 +14,21 @@ export class AuthService {
   private readonly authUrl = inject(XALORITH_AUTH_URL);
 
   /**
-   * Authenticate via OpenIdConnect resource owner password grant.
-   * Token is stored in-memory only.
+   * Authenticate via Xalorith identity server (`POST /connect/token`).
+   *
+   * The backend accepts a JSON body (not form-encoded) whose keys match the
+   * `OpenIdConnectRequest` snake_case property names.  It responds with
+   * `{ token: string, expiration: string }`.
+   *
+   * The JWT is stored in-memory only — never in localStorage — to prevent XSS
+   * token theft.
    */
   login(credentials: LoginVm): Observable<TokenResponse> {
-    const body = new HttpParams()
-      .set('grant_type', 'password')
-      .set('client_id', credentials.clientId)
-      .set('client_secret', credentials.clientSecret)
-      .set('username', credentials.username)
-      .set('password', credentials.password)
-      .set('scope', 'openid profile email');
-
-    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-
-    return this.http.post<TokenResponse>(`${this.authUrl}/connect/token`, body, { headers }).pipe(
+    return this.http.post<TokenResponse>(`${this.authUrl}/connect/token`, credentials).pipe(
       tap((res) => {
-        this.tokenSvc.setToken(res.access_token);
-        const claims = this.tokenSvc.decode(res.access_token);
-        if (claims) this.store.setAuthenticated(res.access_token, claims);
+        this.tokenSvc.setToken(res.token);
+        const claims = this.tokenSvc.decode(res.token);
+        if (claims) this.store.setAuthenticated(res.token, claims);
       }),
     );
   }
