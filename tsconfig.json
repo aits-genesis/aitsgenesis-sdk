@@ -36,10 +36,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/libs/core/tsconfig.lib.json"
+      "path": "./projects/aits-genesis/core/tsconfig.lib.json"
     },
     {
-      "path": "./projects/libs/core/tsconfig.spec.json"
+      "path": "./projects/aits-genesis/core/tsconfig.spec.json"
     },
     {
       "path": "./projects/aits-genesis/models/tsconfig.lib.json"

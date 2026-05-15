@@ -10,18 +10,18 @@
   "projects": {
     "@aits-genesis/core": {
       "projectType": "library",
-      "root": "projects/libs/core",
-      "sourceRoot": "projects/libs/core/src",
-      "prefix": "ag",
+      "root": "projects/aits-genesis/core",
+      "sourceRoot": "projects/aits-genesis/core/src",
+      "prefix": "x",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "projects/libs/core/tsconfig.lib.prod.json"
+              "tsConfig": "projects/aits-genesis/core/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/libs/core/tsconfig.lib.json"
+              "tsConfig": "projects/aits-genesis/core/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -29,14 +29,16 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/libs/core/tsconfig.spec.json"
+            "tsConfig": "projects/aits-genesis/core/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["projects/libs/core/**/*.ts", "projects/libs/core/**/*.html"],
-            "eslintConfig": "projects/libs/core/eslint.config.js"
+            "lintFilePatterns": [
+              "projects/aits-genesis/core/**/*.ts",
+              "projects/aits-genesis/core/**/*.html"
+            ]
           }
         }
       }
