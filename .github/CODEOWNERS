@@ -1,0 +1,26 @@
+# CODEOWNERS
+# Each line: <path-pattern>  <@owner(s)>
+# Owners are notified and required to review matching PRs.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything
+*                               @aits-genesis/sdk-maintainers
+
+# CI/CD and tooling — maintainers only
+.github/                        @aits-genesis/sdk-maintainers
+.releaserc.json                 @aits-genesis/sdk-maintainers
+package.json                    @aits-genesis/sdk-maintainers
+tsconfig*.json                  @aits-genesis/sdk-maintainers
+eslint.config.js                @aits-genesis/sdk-maintainers
+jest.config.js                  @aits-genesis/sdk-maintainers
+.npmrc                          @aits-genesis/sdk-maintainers
+commitlint.config.js            @aits-genesis/sdk-maintainers
+
+# Community health files
+LICENSE                         @aits-genesis/sdk-maintainers
+SECURITY.md                     @aits-genesis/sdk-maintainers
+CODE_OF_CONDUCT.md              @aits-genesis/sdk-maintainers
+
+# Individual libraries — assign per-team when libraries are added
+# projects/libs/core/           @aits-genesis/core-team
+# projects/libs/ui/             @aits-genesis/ui-team
