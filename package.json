@@ -9,9 +9,9 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "build:all": "npm run build:core",
+    "build:all": "npm run build:models && npm run build:utils && npm run build:auth && npm run build:http && npm run build:security && npm run build:org && npm run build:forms && npm run build:ui && npm run build:reporting && npm run build:core",
     "build:core": "ng build @aits-genesis/core --configuration production",
-    "build:libs": "npm run build:core",
+    "build:libs": "npm run build:models && npm run build:utils && npm run build:auth && npm run build:http && npm run build:security && npm run build:org && npm run build:forms && npm run build:ui && npm run build:reporting && npm run build:core",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --passWithNoTests",
@@ -20,7 +20,16 @@
     "format": "prettier --write \"projects/**/*.{ts,html,scss,json}\" \"*.{ts,js,json,md}\"",
     "format:check": "prettier --check \"projects/**/*.{ts,html,scss,json}\" \"*.{ts,js,json,md}\"",
     "prepare": "husky",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "build:models": "ng build @aits-genesis/models --configuration production",
+    "build:utils": "ng build @aits-genesis/utils --configuration production",
+    "build:auth": "ng build @aits-genesis/auth --configuration production",
+    "build:http": "ng build @aits-genesis/http --configuration production",
+    "build:security": "ng build @aits-genesis/security --configuration production",
+    "build:org": "ng build @aits-genesis/org --configuration production",
+    "build:forms": "ng build @aits-genesis/forms --configuration production",
+    "build:ui": "ng build @aits-genesis/ui --configuration production",
+    "build:reporting": "ng build @aits-genesis/reporting --configuration production"
   },
   "private": true,
   "publishConfig": {

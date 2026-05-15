@@ -4,7 +4,16 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@aits-genesis/core": ["./dist/aits-genesis/core"]
+      "@aits-genesis/auth": ["./dist/aits-genesis/auth"],
+      "@aits-genesis/core": ["./dist/aits-genesis/core"],
+      "@aits-genesis/forms": ["./dist/aits-genesis/forms"],
+      "@aits-genesis/http": ["./dist/aits-genesis/http"],
+      "@aits-genesis/models": ["./dist/aits-genesis/models"],
+      "@aits-genesis/org": ["./dist/aits-genesis/org"],
+      "@aits-genesis/reporting": ["./dist/aits-genesis/reporting"],
+      "@aits-genesis/security": ["./dist/aits-genesis/security"],
+      "@aits-genesis/ui": ["./dist/aits-genesis/ui"],
+      "@aits-genesis/utils": ["./dist/aits-genesis/utils"]
     },
     "strict": true,
     "noImplicitOverride": true,
@@ -31,6 +40,60 @@
     },
     {
       "path": "./projects/libs/core/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/models/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/models/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/utils/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/utils/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/auth/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/auth/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/http/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/http/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/security/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/security/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/org/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/org/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/forms/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/forms/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/ui/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/aits-genesis/reporting/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/aits-genesis/reporting/tsconfig.spec.json"
     }
   ]
 }

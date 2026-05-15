@@ -1,0 +1,28 @@
+{
+  "name": "@aits-genesis/reporting",
+  "version": "0.0.0",
+  "description": "Report generation and download service for Xalorith Angular apps",
+  "keywords": [
+    "xalorith",
+    "aits-genesis",
+    "reporting",
+    "pdf",
+    "angular"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aits-genesis/aitsgenesis-sdk.git",
+    "directory": "projects/aits-genesis/reporting"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": ">=21.0.0",
+    "@angular/common": ">=21.0.0",
+    "@aits-genesis/models": "*",
+    "@aits-genesis/http": "*"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}

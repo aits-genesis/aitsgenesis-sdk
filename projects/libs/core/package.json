@@ -1,39 +1,32 @@
 {
   "name": "@aits-genesis/core",
-  "version": "0.0.1",
-  "description": "Core utilities, base classes, tokens, and shared interfaces for the AITS Genesis SDK",
+  "version": "0.0.0",
+  "description": "Core SDK orchestrator for Xalorith Angular applications",
   "keywords": [
-    "angular",
+    "xalorith",
     "aits-genesis",
-    "sdk",
     "core",
-    "utilities"
+    "sdk",
+    "angular"
   ],
-  "author": "AITS Genesis",
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aits-genesis/aitsgenesis-sdk.git",
+    "url": "https://github.com/aits-genesis/aitsgenesis-sdk.git",
     "directory": "projects/libs/core"
   },
-  "homepage": "https://github.com/aits-genesis/aitsgenesis-sdk/tree/main/projects/libs/core#readme",
-  "bugs": {
-    "url": "https://github.com/aits-genesis/aitsgenesis-sdk/issues"
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": ">=21.0.0",
+    "@aits-genesis/auth": "*",
+    "@aits-genesis/http": "*",
+    "@aits-genesis/security": "*",
+    "@aits-genesis/org": "*",
+    "@aits-genesis/forms": "*",
+    "@aits-genesis/ui": "*",
+    "@aits-genesis/reporting": "*"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "public"
-  },
-  "peerDependencies": {
-    "@angular/common": "^21.2.0",
-    "@angular/core": "^21.2.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "sideEffects": false,
-  "engines": {
-    "node": ">=22.0.0",
-    "npm": ">=10.0.0"
   }
 }

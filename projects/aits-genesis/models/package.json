@@ -1,0 +1,30 @@
+{
+  "name": "@aits-genesis/models",
+  "version": "0.0.0",
+  "description": "Shared TypeScript types, interfaces, and enums for the Xalorith platform",
+  "keywords": [
+    "xalorith",
+    "aits-genesis",
+    "models",
+    "types",
+    "enums"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aits-genesis/aitsgenesis-sdk.git",
+    "directory": "projects/aits-genesis/models"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": ">=21.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@angular/core": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}

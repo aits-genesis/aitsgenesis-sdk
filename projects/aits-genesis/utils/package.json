@@ -1,0 +1,22 @@
+{
+  "name": "@aits-genesis/utils",
+  "version": "0.0.0",
+  "description": "Pure utility functions for the Xalorith Angular SDK",
+  "keywords": [
+    "xalorith",
+    "aits-genesis",
+    "utils",
+    "helpers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aits-genesis/aitsgenesis-sdk.git",
+    "directory": "projects/aits-genesis/utils"
+  },
+  "license": "MIT",
+  "peerDependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}

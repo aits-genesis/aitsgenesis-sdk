@@ -40,6 +40,330 @@
           }
         }
       }
+    },
+    "@aits-genesis/models": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/models",
+      "sourceRoot": "projects/aits-genesis/models/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/models/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/models/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/models/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/models/**/*.ts",
+              "projects/aits-genesis/models/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/models/eslint.config.js"
+          }
+        }
+      }
+    },
+    "@aits-genesis/utils": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/utils",
+      "sourceRoot": "projects/aits-genesis/utils/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/utils/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/utils/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/utils/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/utils/**/*.ts",
+              "projects/aits-genesis/utils/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/utils/eslint.config.js"
+          }
+        }
+      }
+    },
+    "@aits-genesis/auth": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/auth",
+      "sourceRoot": "projects/aits-genesis/auth/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/auth/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/auth/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/auth/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/auth/**/*.ts",
+              "projects/aits-genesis/auth/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/auth/eslint.config.js"
+          }
+        }
+      }
+    },
+    "@aits-genesis/http": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/http",
+      "sourceRoot": "projects/aits-genesis/http/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/http/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/http/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/http/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/http/**/*.ts",
+              "projects/aits-genesis/http/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/http/eslint.config.js"
+          }
+        }
+      }
+    },
+    "@aits-genesis/security": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/security",
+      "sourceRoot": "projects/aits-genesis/security/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/security/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/security/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/security/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/security/**/*.ts",
+              "projects/aits-genesis/security/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/security/eslint.config.js"
+          }
+        }
+      }
+    },
+    "@aits-genesis/org": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/org",
+      "sourceRoot": "projects/aits-genesis/org/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/org/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/org/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/org/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/org/**/*.ts",
+              "projects/aits-genesis/org/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/org/eslint.config.js"
+          }
+        }
+      }
+    },
+    "@aits-genesis/forms": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/forms",
+      "sourceRoot": "projects/aits-genesis/forms/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/forms/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/forms/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/forms/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/forms/**/*.ts",
+              "projects/aits-genesis/forms/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/forms/eslint.config.js"
+          }
+        }
+      }
+    },
+    "@aits-genesis/ui": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/ui",
+      "sourceRoot": "projects/aits-genesis/ui/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/ui/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/ui/**/*.ts",
+              "projects/aits-genesis/ui/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/ui/eslint.config.js"
+          }
+        }
+      }
+    },
+    "@aits-genesis/reporting": {
+      "projectType": "library",
+      "root": "projects/aits-genesis/reporting",
+      "sourceRoot": "projects/aits-genesis/reporting/src",
+      "prefix": "x",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aits-genesis/reporting/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aits-genesis/reporting/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/aits-genesis/reporting/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aits-genesis/reporting/**/*.ts",
+              "projects/aits-genesis/reporting/**/*.html"
+            ],
+            "eslintConfig": "projects/aits-genesis/reporting/eslint.config.js"
+          }
+        }
+      }
     }
   }
 }
